@@ -50,9 +50,6 @@ jobs:
     name: Publish to Docker Hub
     runs-on: ubuntu-latest
     needs: [build_and_test]
-    env:
-      DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
-      DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
       
     steps:
       - uses: actions/checkout@v3
