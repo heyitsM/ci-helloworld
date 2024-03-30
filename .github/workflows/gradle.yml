@@ -53,6 +53,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME}}
+      - name: Testing ENV
+        run: cat $HOME/secrets/my_secret.json
       - name: Login to Docker Hub
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       - name: Build Container image
