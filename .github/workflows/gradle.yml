@@ -57,7 +57,7 @@ jobs:
       - name: See Username
         shell: bash
         run: |
-          if [ "${{ secrets.MY_KEY }}" != '' ]; then
+          if [ "${{ secrets.DOCKER_USERNAME }}" != '' ]; then
             echo "available=true" >> $GITHUB_OUTPUT;
           else
             echo "available=false" >> $GITHUB_OUTPUT;
